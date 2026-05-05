@@ -15,3 +15,4 @@ This branch contains the **CI configuration** for CI process of building an appl
 | [`docker`](../../tree/docker) | Dockerfiles for backend and frontend |
 | [`pipeline`](../../tree/pipeline) | ← **you are here** — GitHub Actions CI configuration |
 | [`infra`](../../tree/infra) | Terraform AWS infrastructure |
+| [`free`](../../tree/free) | Another technology stack for infrastructure deployment  |
