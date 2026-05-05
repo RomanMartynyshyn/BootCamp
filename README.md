@@ -4,6 +4,10 @@ This repo created for Charkiv BootCamp.
 
 This project is aimed at developing the first application within Mykhailo Maksymov’s team. However, this project can also be adapted for other applications.
 
+Hint.
+Here is a description of how the author sees the developed infrastructure. But this option is conditionally free. Since using a private repository on github creates pipeline costs, you will have to use a public repository. AWS can also be the main source of costs. However, the use of a free trial period of half a year and credits provided by AWS are considered.
+Below is a description of the technologies used. Also in the Free branch there is a description of other technologies that provide for free use.
+
 This is all about DevOps.
 
  - deploying frontend.
@@ -20,3 +24,14 @@ Expected technologies:
     It is expected that a declarative description of the infrastructure will be created using Terraform to enable rapid scaling of the application’s infrastructure. This approach will also make it easier to transition from the development to the production versions of the project. 
  - AWS.
     Cloud service where all project will be hosted.
+ - GitHub Action.
+    It is planned to use github actions for the CI part of the pipeline. It is also considering the possible option of using gitlab CI in case the code is hosted on gitlab.
+
+The repository has a branch system.
+
+[Branch with docker files.](../../tree/docker)
+   This branch contains dokerfiles for backend and fronend.
+[Branch with CI description.](../../tree/pipeline)
+   This repository contains the code for github Action, namely the CI part of the pipeline.
+[Branch with infrastructure description.](../../tree/infra)
+   Describe AWS infrastructure for a project using Terraform
