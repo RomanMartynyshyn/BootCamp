@@ -56,3 +56,4 @@ Costs are covered by the **AWS Free Tier** for the first 12 months (750 hrs/mont
 | [`docker`](../../tree/docker) | Dockerfiles for backend and frontend |
 | [`pipeline`](../../tree/pipeline) | GitHub Actions CI configuration |
 | [`infra`](../../tree/infra) | ← **you are here** — Terraform AWS infrastructure |
+| [`free`](../../tree/free) | Another technology stack for infrastructure deployment  |
