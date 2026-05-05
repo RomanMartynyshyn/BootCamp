@@ -1,39 +1,58 @@
-# BootCamp
+# Infrastructure — `infra` branch
 
-This repo created for Charkiv BootCamp. 
+This branch contains the **Terraform** configuration that provisions the AWS
+infrastructure for the BootCamp project.
 
-This project is aimed at developing the first application within Mykhailo Maksymov’s team. However, this project can also be adapted for other applications.
+---
 
-Hint.
-Here is a description of how the author sees the developed infrastructure. But this option is conditionally free. Since using a private repository on github creates pipeline costs, you will have to use a public repository. AWS can also be the main source of costs. However, the use of a free trial period of half a year and credits provided by AWS are considered.
-Below is a description of the technologies used. Also in the Free branch there is a description of other technologies that provide for free use.
+## Architecture Overview
 
-This is all about DevOps.
+```
+AWS (eu-north-1)
+│
+├── Security Group  (bootcamp-dev-web-sg)
+│   ├── Inbound  :22  TCP — SSH   (restricted CIDR)
+│   ├── Inbound  :80  TCP — HTTP  (0.0.0.0/0)
+│   └── Outbound :*   ALL         (0.0.0.0/0)
+│
+├── EC2 Instance — bootcamp-dev-server-1  (t3.micro, Ubuntu 24.04)
+└── EC2 Instance — bootcamp-dev-server-2  (t3.micro, Ubuntu 24.04)
+```
 
- - deploying frontend.
- - deploying backend.
- - deploying DB.
+Both instances run in the **default VPC** of the selected region with a public
+IP address (suitable for a short-lived dev/bootcamp setup).
 
-The project is expected to be deployed on AWS cloud services.
+---
 
-Expected technologies:
+## File Structure
 
- - Docker.
-    It is expected that the backend component will run in containers. And frontend component will run in container for dev project version.
- - Terraform.
-    It is expected that a declarative description of the infrastructure will be created using Terraform to enable rapid scaling of the application’s infrastructure. This approach will also make it easier to transition from the development to the production versions of the project. 
- - AWS.
-    Cloud service where all project will be hosted.
- - GitHub Action.
-    It is planned to use github actions for the CI part of the pipeline. It is also considering the possible option of using gitlab CI in case the code is hosted on gitlab.
+| File | Purpose |
+|------|---------|
+| `main.tf` | Terraform & provider configuration, version constraints, default tags |
+| `ec2.tf` | Security Group rules and EC2 instance resources |
+| `variables.tf` | All input variables with types, descriptions and validation |
+| `outputs.tf` | Useful output values after `terraform apply` |
+| `terraform.tfvars` | Default variable values for the dev environment |
+| `.gitignore` | Prevents committing state files, secrets and cache |
 
-The repository has a branch system.
 
-[Branch with docker files.](../../tree/docker)<br>
-- This branch contains dokerfiles for backend and fronend.<br>
+## Cost Estimate (eu-north-1, On-Demand)
 
-[Branch with CI description.](../../tree/pipeline)<br>
-- This repository contains the code for github Action, namely the CI part of the pipeline.<br>
+| Resource | Qty | $/hr | $/month (est.) |
+|----------|-----|------|----------------|
+| t3.micro | 2 | ~$0.0118 | ~$17 |
+| gp3 20 GiB | 2 | — | ~$2 |
+| Public IP | 2 | $0.005 | ~$7 |
+| **Total** | | | **~$26** |
 
-[Branch with infrastructure description.](../../tree/infra)<br>
-- Describe AWS infrastructure for a project using Terraform<br>
+Costs are covered by the **AWS Free Tier** for the first 12 months (750 hrs/month of t3.micro).
+
+---
+
+## Related Branches
+
+| Branch | Contents |
+|--------|---------|
+| [`docker`](../../tree/docker) | Dockerfiles for backend and frontend |
+| [`pipeline`](../../tree/pipeline) | GitHub Actions CI configuration |
+| [`infra`](../../tree/infra) | ← **you are here** — Terraform AWS infrastructure |
