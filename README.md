@@ -5,34 +5,22 @@ This repo was created for **Charkiv BootCamp**.
 This project is aimed at developing the first application within Mykhailo Maksymov's team.
 However, this project can also be adapted for other applications.
 
-> **Note:** The infrastructure described here is conditionally free. Using a private GitHub
-> repository creates pipeline costs, so a public repository is used instead. AWS can also be
-> a source of costs — however, the free trial period (6 months) and AWS credits are considered.
-> The `Free` branch contains alternative technologies with fully free usage.
-
----
-
-## Project Goals
-
-This is all about **DevOps**:
-
-- Deploying the **frontend**
-- Deploying the **backend**
-- Deploying the **database**
-
-The project is expected to be deployed on **AWS** cloud services.
-
 ---
 
 ## Expected Technologies
 
 | Technology | Role |
 |------------|------|
-| **Docker** | The backend component will run in containers. The frontend will also run in a container for the dev version of the project. |
-| **Terraform** | A declarative description of the infrastructure will be created to enable rapid scaling. This approach also makes it easier to transition from development to production. |
-| **AWS** | Cloud service where the entire project will be hosted. |
-| **GitHub Actions** | Used for the CI part of the pipeline. GitLab CI is also considered as an alternative if the code is hosted on GitLab. |
+| **GitHub Pages** | Cloud service for displaying static websites. Integrated with github and completely free |
+| **Koyeb** | a modern PaaS (Platform as a Service) platform that allows developers to launch applications in the cloud in minutes. |
+| **neon postgres** | Cloud service for DB. |
 
+Koyeb and Neon have completely free levels. 
+They also have a lower entry threshold, which means it will be easier to work with them.
+One of the disadvantages is that they tend to fall asleep when idle, which can cause a delay when the first request is made. There is also no possibility for detailed configuration like in AWS.
+<br>
+
+The author has not worked with these technologies yet but will be delighted to learn more about them during the project creation process.
 ---
 
 ## Repository Structure
@@ -45,3 +33,4 @@ of the project configuration:
 | [`docker`](../../tree/docker) | Dockerfiles for backend and frontend |
 | [`pipeline`](../../tree/pipeline) | GitHub Actions CI configuration |
 | [`infra`](../../tree/infra) | Terraform AWS infrastructure |
+| [`free`](../../tree/infra) | ← you are here — Another technology stack for infrastructure deployment  |
