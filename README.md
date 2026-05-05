@@ -29,9 +29,11 @@ Expected technologies:
 
 The repository has a branch system.
 
-[Branch with docker files.](../../tree/docker)
-   This branch contains dokerfiles for backend and fronend.
-[Branch with CI description.](../../tree/pipeline)
-   This repository contains the code for github Action, namely the CI part of the pipeline.
-[Branch with infrastructure description.](../../tree/infra)
-   Describe AWS infrastructure for a project using Terraform
+[Branch with docker files.](../../tree/docker)<br>
+- This branch contains dokerfiles for backend and fronend.<br>
+
+[Branch with CI description.](../../tree/pipeline)<br>
+- This repository contains the code for github Action, namely the CI part of the pipeline.<br>
+
+[Branch with infrastructure description.](../../tree/infra)<br>
+- Describe AWS infrastructure for a project using Terraform<br>
