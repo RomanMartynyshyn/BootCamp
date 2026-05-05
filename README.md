@@ -43,3 +43,4 @@ Single Page Applications (SPA) with static asset caching.
 | [`docker`](../../tree/docker) | ← **you are here** — Dockerfiles for backend and frontend |
 | [`pipeline`](../../tree/pipeline) | GitHub Actions CI configuration |
 | [`infra`](../../tree/infra) | Terraform AWS infrastructure |
+| [`free`](../../tree/free) | Another technology stack for infrastructure deployment  |
