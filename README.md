@@ -45,3 +45,4 @@ of the project configuration:
 | [`docker`](../../tree/docker) | Dockerfiles for backend and frontend |
 | [`pipeline`](../../tree/pipeline) | GitHub Actions CI configuration |
 | [`infra`](../../tree/infra) | Terraform AWS infrastructure |
+| [`free`](../../tree/infra) | Another technology stack for infrastructure deployment  |
