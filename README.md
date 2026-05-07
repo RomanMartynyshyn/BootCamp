@@ -1,6 +1,6 @@
 # BootCamp
 
-This repo was created for **Charkiv BootCamp**.
+This repo was created for **Kharkiv BootCamp**.
 
 This project is aimed at developing the first application within Mykhailo Maksymov's team.
 However, this project can also be adapted for other applications.
